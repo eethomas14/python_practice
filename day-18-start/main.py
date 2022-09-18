@@ -1,12 +1,24 @@
+import random
+import turtle
 from turtle import Turtle, Screen
 
-timmy_the_turtle = Turtle()
-timmy_the_turtle.shape("turtle")
-timmy_the_turtle.color("magenta3")
+tim = Turtle()
 
-for _ in range(4):
-    timmy_the_turtle.fd(50)
-    timmy_the_turtle.right(90)
+colors = ["orange red", "magenta", "yellow", "green yellow", "deep pink", "deep sky blue", "blue violet", "dark green",
+          "dark blue", "dark goldenrod"]
+
+def draw_figure(sides):
+    angle = 360 / sides
+    tim.pencolor(random.choice(colors))
+    for _ in range(sides):
+        tim.fd(50)
+        tim.right(angle)
+
+i = 3
+
+while i < 10:
+    draw_figure(i)
+    i += 1
 
 screen = Screen()
 screen.exitonclick()
